@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.h                                        :+:      :+:    :+:   */
+/*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkido <kkido@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 17:03:01 by kkido             #+#    #+#             */
-/*   Updated: 2026/04/22 17:25:51 by kkido            ###   ########.fr       */
+/*   Updated: 2026/04/22 18:28:24 by kkido            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONBOOK_H
-#define PHONEBOOK_H
+#ifndef DEFINE_H
+#define DEFINE_H
 #include <string>
 
 enum e_command_kind

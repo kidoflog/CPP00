@@ -6,12 +6,14 @@
 /*   By: kkido <kkido@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/12 17:31:14 by kkido             #+#    #+#             */
-/*   Updated: 2026/04/22 18:20:57 by kkido            ###   ########.fr       */
+/*   Updated: 2026/04/22 18:29:41 by kkido            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include <iostream>
 
-int main()
+int main(void)
 {
+	std::cout << "-----Open phone book-----\n";
 }
