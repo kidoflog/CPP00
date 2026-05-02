@@ -6,7 +6,7 @@
 /*   By: kkido <kkido@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/12 17:40:02 by kkido             #+#    #+#             */
-/*   Updated: 2026/04/26 19:39:03 by kkido            ###   ########.fr       */
+/*   Updated: 2026/04/27 15:05:41 by kkido            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ public:
 		DARKEST_SECRET
 		};
 	void set_info(const std::string str, e_info_kind info);
-	void display_name(int index);
+	void display_names(int index);
 	void display_info();
 
 private:
+	void display_name_set_width(std::string str);
 	std::string first_name;
 	std::string last_name;
 	std::string nick_name;
