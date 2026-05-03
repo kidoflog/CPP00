@@ -6,7 +6,7 @@
 /*   By: kkido <kkido@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 17:09:22 by kkido             #+#    #+#             */
-/*   Updated: 2026/05/02 19:13:08 by kkido            ###   ########.fr       */
+/*   Updated: 2026/05/03 15:39:10 by kkido            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,45 @@ void PhoneBook::add_contact(){
 	Contact tmp_c;
 
 	index = _count % 8;
-
-	std::cout << "\nPlease enter first name: "<<std::flush;
-	std::getline(std::cin, info);
+	while(1){
+		std::cout << "\nPlease enter first name: "<<std::flush;
+		std::getline(std::cin, info);
+		if(!info.empty())
+			break;
+		std::cout << "Error: Field cannnot be empty."<<std::flush;
+	}
 	tmp_c.set_info(info, Contact::FIRST_NAME);
-	std::cout << "Please enter last name: "<<std::flush;
-	std::getline(std::cin, info);
+	while(1){
+		std::cout << "\nPlease enter last name: "<<std::flush;
+		std::getline(std::cin, info);
+		if(!info.empty())
+			break;
+		std::cout << "Error: Field cannnot be empty."<<std::flush;
+	}
 	tmp_c.set_info(info, Contact::LAST_NAME);
-	std::cout << "Please enter nick name: "<<std::flush;
-	std::getline(std::cin, info);
+	while(1){
+		std::cout << "\nPlease enter nick name: "<<std::flush;
+		std::getline(std::cin, info);
+		if(!info.empty())
+			break;
+		std::cout << "Error: Field cannnot be empty."<<std::flush;
+	}
 	tmp_c.set_info(info, Contact::NICK_NAME);
-	std::cout << "Please enter phone number: "<<std::flush;
-	std::getline(std::cin, info);
+	while(1){
+		std::cout << "\nPlease phone number: "<<std::flush;
+		std::getline(std::cin, info);
+		if(!info.empty())
+			break;
+		std::cout << "Error: Field cannnot be empty."<<std::flush;
+	}
 	tmp_c.set_info(info, Contact::PHONE_NUMBER);
-	std::cout << "Please enter darkest secret: "<<std::flush;
-	std::getline(std::cin, info);
+	while(1){
+		std::cout << "\nPlease darkest secret: "<<std::flush;
+		std::getline(std::cin, info);
+		if(!info.empty())
+			break;
+		std::cout << "Error: Field cannnot be empty."<<std::flush;
+	}
 	tmp_c.set_info(info, Contact::DARKEST_SECRET);
 
 	std::cout << "Add contact completed!\n" << std::endl;
@@ -47,15 +71,21 @@ void PhoneBook::add_contact(){
 
 void PhoneBook::search_contact(){
 	std::string input;
+	int index;
+
 	if(_count == 0){
 		std::cout << "Error: Contact is not exist.\n" << std::endl;
 		return;
 	}
 	display_contact();
 	std::cout << "Please enter index to display:" << std::flush;
-	input << std::cin;
-
-
+	std::getline(std::cin, input);
+	index = std::atoi(input.c_str());
+	if(index + 1 > _count){
+		std::cout << "Error: Contact is not exist.\n" << std::endl;
+		return;
+	}
+	contact[index].display_info();
 }
 
 
