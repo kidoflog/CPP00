@@ -6,7 +6,7 @@
 /*   By: kkido <kkido@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/12 17:31:14 by kkido             #+#    #+#             */
-/*   Updated: 2026/04/26 19:55:35 by kkido            ###   ########.fr       */
+/*   Updated: 2026/05/03 19:40:28 by kkido            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(void)
 	std::cout << "-----Open phone book-----\n" << std::endl;
 	while(1){
 	std::cout << "Please input command:\n- ADD\n- SEARCH\n- EXIT\n" << std::endl;
-	std::getline(std::cin, cmd);
+	cmd = my_get_line();
 	if(cmd == "ADD"){
 		phonebook.add_contact();
 	}
