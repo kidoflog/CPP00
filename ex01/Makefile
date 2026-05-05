@@ -6,7 +6,7 @@
 #    By: kkido <kkido@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/12 16:22:21 by kkido             #+#    #+#              #
-#    Updated: 2026/05/03 19:36:03 by kkido            ###   ########.fr        #
+#    Updated: 2026/05/05 22:14:08 by kkido            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,8 @@ SRCS = Contact.cpp PhoneBook.cpp main.cpp my_get_line.cpp
 OBJDIR = objs
 OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
 
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 BLACK   = \033[0;30m
 RED     = \033[0;31m
@@ -32,14 +32,14 @@ RESET   = \033[0m
 
 $(NAME):$(LIB) $(OBJS)
 	@echo "$(GREEN)[INFO]$(CYAN) Building $(WHITE)$(NAME)...$(RESET)"
-	@$(CC) $(OBJS) -o $(NAME)
+	@$(CXX) $(OBJS) -o $(NAME)
 	@echo "$(GREEN)[OK]$(BLUE) Build completed!$(RESET)"
 
 all: $(NAME)
 
 $(OBJDIR)/%.o: %.cpp
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJDIR)

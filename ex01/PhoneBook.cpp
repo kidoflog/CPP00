@@ -6,7 +6,7 @@
 /*   By: kkido <kkido@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 17:09:22 by kkido             #+#    #+#             */
-/*   Updated: 2026/05/03 19:42:35 by kkido            ###   ########.fr       */
+/*   Updated: 2026/05/05 22:16:14 by kkido            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void PhoneBook::search_contact(){
 	std::cout << "Please enter index to display:" << std::flush;
 	input = my_get_line();
 	index = atoi(input.c_str());
-	if(index + 1 > _count || index < 0){
+	if(index + 1 > _count ||( index < 0 || index > 7)){
 		std::cout << "Error: Contact does not exist.\n" << std::endl;
 		return;
 	}
