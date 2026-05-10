@@ -6,13 +6,14 @@
 /*   By: kkido <kkido@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 17:09:22 by kkido             #+#    #+#             */
-/*   Updated: 2026/05/05 23:23:10 by kkido            ###   ########.fr       */
+/*   Updated: 2026/05/10 17:01:08 by kkido            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "PhoneBook.hpp"
 #include <stdlib.h>
+#include <sstream>
 
 PhoneBook::PhoneBook() : _count(0){
 }
@@ -81,8 +82,8 @@ void PhoneBook::search_contact(){
 	display_contact();
 	std::cout << "Please enter index to display:" << std::flush;
 	input = my_get_line();
-	index = atoi(input.c_str());
-	if(index + 1 > _count ||( index < 0 || index > 7)){
+	std::stringstream ss(input);
+	if(!(ss >> index)||index + 1 > _count ||( index < 0 || index > 7)){
 		std::cout << "Error: Contact does not exist.\n" << std::endl;
 		return;
 	}
