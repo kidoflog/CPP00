@@ -6,13 +6,13 @@
 /*   By: kkido <kkido@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/12 17:40:02 by kkido             #+#    #+#             */
-/*   Updated: 2026/05/03 19:37:54 by kkido            ###   ########.fr       */
+/*   Updated: 2026/05/13 20:14:36 by kkido            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
-#include "my_get_line.hpp"
+#include "func.hpp"
 
 class Contact
 {

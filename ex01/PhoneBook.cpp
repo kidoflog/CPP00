@@ -6,7 +6,7 @@
 /*   By: kkido <kkido@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 17:09:22 by kkido             #+#    #+#             */
-/*   Updated: 2026/05/10 17:01:08 by kkido            ###   ########.fr       */
+/*   Updated: 2026/05/13 20:38:00 by kkido            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,48 +27,51 @@ void PhoneBook::add_contact(){
 	while(1){
 		std::cout << "\nPlease enter first name: "<<std::flush;
 		info = my_get_line();
-		if(!info.empty())
+		if(is_valid_str(info))
 			break;
-		std::cout << "Error: Field cannnot be empty."<<std::flush;
+		std::cout << "Error: Field must be valid str."<<std::flush;
 	}
 	tmp_c.set_info(info, Contact::FIRST_NAME);
 	while(1){
 		std::cout << "\nPlease enter last name: "<<std::flush;
 		info = my_get_line();
-		if(!info.empty())
+		if(is_valid_str(info))
 			break;
-		std::cout << "Error: Field cannnot be empty."<<std::flush;
+		std::cout << "Error: Field must be valid str."<<std::flush;
 	}
 	tmp_c.set_info(info, Contact::LAST_NAME);
 	while(1){
 		std::cout << "\nPlease enter nick name: "<<std::flush;
 		info = my_get_line();
-		if(!info.empty())
+		if(is_valid_str(info))
 			break;
-		std::cout << "Error: Field cannnot be empty."<<std::flush;
+		std::cout << "Error: Field must be valid str."<<std::flush;
 	}
 	tmp_c.set_info(info, Contact::NICK_NAME);
 	while(1){
 		std::cout << "\nPlease phone number: "<<std::flush;
 		info = my_get_line();
-		if(!info.empty())
+		if(is_valid_str(info))
 			break;
-		std::cout << "Error: Field cannnot be empty."<<std::flush;
+		std::cout << "Error: Field must be valid str."<<std::flush;
 	}
 	tmp_c.set_info(info, Contact::PHONE_NUMBER);
 	while(1){
 		std::cout << "\nPlease darkest secret: "<<std::flush;
 		info = my_get_line();
-		if(!info.empty())
+		if(is_valid_str(info))
 			break;
-		std::cout << "Error: Field cannnot be empty."<<std::flush;
+		std::cout << "Error: Field must be valid str."<<std::flush;
 	}
 	tmp_c.set_info(info, Contact::DARKEST_SECRET);
 
 	std::cout << "Add contact completed!\n" << std::endl;
 
 	contact[index] =  tmp_c;
-	_count++;
+	if(_count == 15)
+		_count = 8;
+	else
+		_count++;
 }
 
 void PhoneBook::search_contact(){

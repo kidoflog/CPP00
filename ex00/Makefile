@@ -6,7 +6,7 @@
 #    By: kkido <kkido@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/12 16:22:21 by kkido             #+#    #+#              #
-#    Updated: 2026/05/05 22:14:27 by kkido            ###   ########.fr        #
+#    Updated: 2026/05/13 20:07:08 by kkido            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,12 +30,12 @@ CYAN    = \033[0;36m
 WHITE   = \033[0;37m
 RESET   = \033[0m
 
+all: $(NAME)
+
 $(NAME):$(LIB) $(OBJS)
 	@echo "$(GREEN)[INFO]$(CYAN) Building $(WHITE)$(NAME)...$(RESET)"
 	@$(CXX) $(OBJS) -o $(NAME)
 	@echo "$(GREEN)[OK]$(BLUE) Build completed!$(RESET)"
-
-all: $(NAME)
 
 $(OBJDIR)/%.o: %.cpp
 	@mkdir -p $(dir $@)
@@ -49,6 +49,9 @@ fclean:	clean
 	@rm -f $(NAME)
 	@echo "$(YELLOW)[DELETE]$(RED) All clean: $(NAME)$(RESET)"
 
-re: fclean all
+re:
+	@$(MAKE) fclean --no-print-directory
+	@$(MAKE) all --no-print-directory
+
 
 .PHONY: all clean fclean re
