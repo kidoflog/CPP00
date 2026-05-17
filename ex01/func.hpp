@@ -6,7 +6,7 @@
 /*   By: kkido <kkido@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 19:34:41 by kkido             #+#    #+#             */
-/*   Updated: 2026/05/13 20:30:22 by kkido            ###   ########.fr       */
+/*   Updated: 2026/05/17 13:26:03 by kkido            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,12 @@
 #include <iostream>
 #include <stdlib.h>
 
+enum e_check_num{
+	IS_NUM,
+	IS_NOT_NUM
+};
+
 std::string my_get_line();
-bool is_valid_str(const std::string str);
+bool is_valid_input(const std::string str,e_check_num is_num);
 
 #endif
